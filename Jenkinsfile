@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/NImani6/Lab2'
+                git branch: 'main', url: 'https://github.com/NImani6/Lab2.git'
             }
         }
 
