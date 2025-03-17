@@ -36,6 +36,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 sh 'docker push $DOCKER_HUB_USER/$DOCKER_IMAGE'
+
             }
         }
     }
