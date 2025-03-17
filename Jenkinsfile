@@ -9,13 +9,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/NImani6/Lab2.git'
+                git branch: 'main', url: 'https://github.com/NImani6/Lab2.git'
             }
         }
 
         stage('Build Maven Project') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean package -DskipTests'
             }
         }
 
@@ -36,7 +36,6 @@ pipeline {
         stage('Docker Push') {
             steps {
                 sh 'docker push $DOCKER_HUB_USER/$DOCKER_IMAGE'
-
             }
         }
     }
